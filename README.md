@@ -4,6 +4,10 @@ A lightweight product evaluation framework for GenAI features.
 
 This repo is designed for AI Product Managers and product leaders who need to define what "good" means before launching an AI-powered experience.
 
+## Demo
+
+![AI Evaluation Workbench](assets/demo-screenshot.png)
+
 ## What this demonstrates
 
 - Turning ambiguous AI product quality into measurable criteria
