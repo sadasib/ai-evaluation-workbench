@@ -1,61 +1,110 @@
 # AI Evaluation Workbench
 
-A lightweight product evaluation framework for GenAI features.
+> A practical evaluation toolkit for AI Product Managers to define, measure, and communicate AI quality before launch.
 
-This repo is designed for AI Product Managers and product leaders who need to define what "good" means before launching an AI-powered experience.
+Building an AI feature is only half the job. The harder question is knowing **when it's good enough to launch**.
+
+This repository provides a lightweight evaluation framework that helps product teams move beyond demos by measuring AI quality using synthetic scenarios, transparent scoring, and launch-oriented evaluation criteria.
+
+---
+
+## Start Here
+
+This repository focuses on **Gate 2 — AI Quality** from the **AI Product Playbook**.
+
+It demonstrates how AI Product Managers can define measurable quality before making launch decisions.
+
+```mermaid
+flowchart TD
+    A[Customer Query]
+    --> B[AI Response]
+    --> C[Evaluation Rubric]
+    --> D[Scoring]
+    --> E[Launch Recommendation]
+```
+
+---
 
 ## Demo
 
 ![AI Evaluation Workbench](assets/demo-screenshot.png)
 
-## What this demonstrates
+---
 
-- Turning ambiguous AI product quality into measurable criteria
-- Evaluating model responses using synthetic test cases
-- Classifying failures before launch
-- Connecting AI quality to launch decisions
-- Communicating trade-offs across product, engineering, data science, and risk teams
+## Why This Project Exists
 
-## Product problem
+AI demos often perform well on happy-path scenarios while failing on edge cases that matter most in production.
 
-AI demos can look impressive but fail in edge cases. Product teams need a simple way to evaluate whether an AI feature is accurate, grounded, policy-compliant, helpful, safe, and ready to launch.
+This workbench provides a structured way to evaluate AI responses before launch by combining synthetic test cases, human judgment, and transparent scoring criteria.
 
-## What is included
+---
 
-| Area | Artifact |
-|---|---|
-| Product framing | `docs/product_brief.md` |
-| Evaluation design | `docs/eval_plan.md` |
-| Launch decision | `docs/launch_decision_memo.md` |
-| Failure modes | `evals/failure_taxonomy.md` |
-| Scoring rubric | `evals/rubric.md` |
-| Synthetic test cases | `data/synthetic_eval_cases.csv` |
-| Scoring script | `evals/scoring.py` |
-| Streamlit demo | `app/app.py` |
+## What This Demonstrates
 
-## How it works
+* Translating AI quality into measurable product metrics
+* Designing evaluation plans for GenAI features
+* Identifying failure modes before launch
+* Connecting AI quality to product decisions
+* Communicating trade-offs across Product, Engineering, Applied AI, and Risk teams
 
-The workbench scores synthetic AI responses across five dimensions:
+---
 
-1. Correctness
-2. Policy compliance
-3. Escalation behavior
-4. Helpfulness
-5. Safety
+## Repository Contents
 
-The scoring logic is intentionally simple and transparent. The goal is not to replace human judgment. The goal is to make product quality explicit enough for discussion, iteration, and launch readiness.
+| Area                     | Purpose                                                      |
+| ------------------------ | ------------------------------------------------------------ |
+| **Product Brief**        | Defines the customer problem and evaluation objectives       |
+| **Evaluation Plan**      | Establishes success criteria and testing methodology         |
+| **Launch Decision Memo** | Documents launch recommendations based on evaluation results |
+| **Failure Taxonomy**     | Classifies common AI failure modes                           |
+| **Scoring Rubric**       | Defines evaluation dimensions and scoring criteria           |
+| **Synthetic Test Cases** | Representative customer scenarios for evaluation             |
+| **Scoring Engine**       | Calculates evaluation results                                |
+| **Streamlit Demo**       | Interactive evaluation interface                             |
 
-## Run locally
+---
+
+## Evaluation Dimensions
+
+The workbench evaluates AI responses across five core dimensions:
+
+| Dimension               | Why It Matters                                         |
+| ----------------------- | ------------------------------------------------------ |
+| **Correctness**         | Is the response factually accurate?                    |
+| **Policy Compliance**   | Does it follow defined business policies?              |
+| **Escalation Behavior** | Does it recognize when human intervention is required? |
+| **Helpfulness**         | Does it solve the customer's problem effectively?      |
+| **Safety**              | Does it avoid harmful or inappropriate responses?      |
+
+The scoring framework is intentionally simple and transparent. It is designed to support product decisions—not replace human judgment.
+
+---
+
+## Example Launch Criteria
+
+An AI feature should not progress to broader rollout until it meets predefined quality thresholds, for example:
+
+* Average evaluation score ≥ **4.0 / 5**
+* No critical policy compliance failures
+* Escalation behavior validated for high-risk scenarios
+* Failure modes documented and reviewed
+* Human evaluation completed for critical customer journeys
+
+---
+
+## Running the Demo
+
+### macOS / Linux
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python evals/scoring.py
 streamlit run app/app.py
 ```
 
-For Windows PowerShell:
+### Windows (PowerShell)
 
 ```powershell
 python -m venv .venv
@@ -65,35 +114,52 @@ python evals/scoring.py
 streamlit run app/app.py
 ```
 
-## Example launch criteria
+---
 
-A GenAI feature should not move to broader rollout unless:
+## Where This Fits
 
-- Average score is 4.0 or higher out of 5.0
-- No critical policy compliance failures
-- Escalation behavior works for high-risk cases
-- Failure modes are understood and documented
-- Human review approves the top-risk scenarios
+This repository implements the AI quality evaluation methodology described in the **AI Product Playbook**.
 
-## Roadmap
+```mermaid
+graph TD
+    A[AI Product Playbook]
+    A --> B[AI Evaluation Workbench]
+    A --> C[Retail AI Agent Demo]
+```
 
-- Add weighted scoring by risk area
-- Add evaluator notes and reviewer workflow
-- Add prompt/version comparison
-- Add cost and latency tracking
-- Add visual launch-readiness dashboard
-- Add example executive decision memo
+---
 
 ## Related Projects
 
-Looking for the complete AI Product operating model?
+| Repository                                                                            | Purpose                                                                                     |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **[AI Product Playbook](https://github.com/sadasib/ai-product-playbook)**             | Frameworks, templates, and operating models for building and launching AI products.         |
+| **[Retail AI Agent Demo](https://github.com/sadasib/retail-ai-agent-synthetic-demo)** | Demonstrates how the evaluation framework can be applied to a realistic retail AI use case. |
 
-→ AI Product Playbook
+---
 
-Interested in seeing evaluation applied to a real product?
+## Roadmap
 
-→ Retail AI Agent Demo
+Current Version
+
+* Synthetic evaluation framework
+* Transparent scoring rubric
+* Failure taxonomy
+* Interactive Streamlit demo
+
+Planned Improvements
+
+* Risk-weighted scoring
+* Prompt and model version comparison
+* Human reviewer workflow
+* Cost and latency analysis
+* Launch readiness dashboard
+* Automated evaluation reports
+
+---
 
 ## Disclaimer
 
-This is a personal portfolio project using synthetic data and public examples only. It is not affiliated with, endorsed by, or representative of any employer.
+This repository is a personal portfolio project created for learning and knowledge sharing.
+
+All examples use synthetic data and publicly available concepts. Nothing in this repository contains confidential information or represents the views of my employer.
