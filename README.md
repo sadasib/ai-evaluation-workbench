@@ -84,6 +84,16 @@ A GenAI feature should not move to broader rollout unless:
 - Add visual launch-readiness dashboard
 - Add example executive decision memo
 
+## Related Projects
+
+Looking for the complete AI Product operating model?
+
+→ AI Product Playbook
+
+Interested in seeing evaluation applied to a real product?
+
+→ Retail AI Agent Demo
+
 ## Disclaimer
 
 This is a personal portfolio project using synthetic data and public examples only. It is not affiliated with, endorsed by, or representative of any employer.
