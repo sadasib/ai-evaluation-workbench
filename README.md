@@ -162,4 +162,4 @@ Planned Improvements
 
 This repository is a personal portfolio project created for learning and knowledge sharing.
 
-All examples use synthetic data and publicly available concepts. Nothing in this repository contains confidential information or represents the views of my employer.
+All examples use synthetic data and publicly available concepts. Nothing in this repository contains confidential information or represents the views of my employer in anyway.
